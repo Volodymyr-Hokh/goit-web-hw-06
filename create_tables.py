@@ -12,7 +12,6 @@ def create_tables():
         conn = psycopg2.connect(
             dbname=dbname, user=user, password=password, host=host)
         cursor = conn.cursor()
-        print("Підключено до бази даних PostgreSQL!")
 
         with open('create_tables.sql', 'r') as file:
             script = file.read()
@@ -26,7 +25,6 @@ def create_tables():
         if conn:
             cursor.close()
             conn.close()
-            print("Connection closed")
 
 
 if __name__ == "__main__":

@@ -68,7 +68,6 @@ def main():
         conn = psycopg2.connect(
             dbname=DBNAME, user=USER, password=PASSWORD, host=HOST)
         cursor = conn.cursor()
-        print("Connected to PostgreSQL!")
 
         seed_groups(cursor)
         seed_teachers(cursor)
@@ -84,7 +83,6 @@ def main():
         if conn:
             cursor.close()
             conn.close()
-            print("Connection closed")
 
 
 if __name__ == '__main__':
